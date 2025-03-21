@@ -12,6 +12,7 @@ class CustomNavigationBar extends StatelessWidget {
   final Color selectedLabelColor;
   final Color unselectedLabelColor;
   final bool displayLabel;
+  final bool displayIcon;
 
   const CustomNavigationBar({
     required this.currentIndex,
@@ -23,7 +24,8 @@ class CustomNavigationBar extends StatelessWidget {
     required this.unselectedItemBackgroundColor,
     required this.unselectedIconColor,
     required this.unselectedLabelColor,
-    required this.displayLabel,
+    this.displayLabel = true,
+    this.displayIcon = true,
     super.key
   });
 
@@ -62,11 +64,12 @@ class CustomNavigationBar extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Icon(
-                  item.icon,
-                  color: currentIndex == item.index ? selectedIconColor : unselectedIconColor,
-                  size: 30,
-                ),
+                if(displayIcon)
+                  Icon(
+                    item.icon,
+                    color: currentIndex == item.index ? selectedIconColor : unselectedIconColor,
+                    size: 30,
+                  ),
                 const SizedBox(height: 4),
                 if(displayLabel)
                   Text(

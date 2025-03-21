@@ -66,7 +66,6 @@ class _MyHomePageState extends State<MyHomePage> {
         unselectedIconColor: Color(0xFFFF0000),
         selectedLabelColor:Color(0xFF000000),
         unselectedLabelColor: Color(0xFFFF0000),
-        displayLabel: true,
         children: [
           NavigationItem(icon: Icons.home, label: 'Home', index: 0),
           NavigationItem(icon: Icons.favorite, label: 'Favorite', index: 1),
